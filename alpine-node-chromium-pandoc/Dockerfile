@@ -4,6 +4,7 @@ ARG PANDOC_VERSION=2.2.3.2
 
 RUN echo http://nl.alpinelinux.org/alpine/edge/main >> /etc/apk/repositories \
  && echo http://nl.alpinelinux.org/alpine/edge/community >> /etc/apk/repositories \
+ && apk add --no-cache ca-certificates && update-ca-certificates \
  && apk add --no-cache chromium nss \
  && apk add --no-cache -t build-dependencies \
     ghc cabal curl \
