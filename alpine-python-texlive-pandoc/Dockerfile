@@ -4,7 +4,6 @@ ARG PANDOC_V=2.4
 ENV PATH /usr/local/texlive/2018/bin/x86_64-linuxmusl:$PATH
 
 RUN apk add --no-cache ca-certificates && update-ca-certificates \
- && wget -O - https://bootstrap.pypa.io/get-pip.py | python \
  && wget -O - https://github.com/jgm/pandoc/releases/download/$PANDOC_V/pandoc-$PANDOC_V-linux.tar.gz | \
     tar -xz -C /usr/local/ --strip-components=1 \
  && rm -rf /usr/local/share/man/*
