@@ -1,6 +1,6 @@
 # alpine-node-chromium-pandoc
 
-Alpine3.8 + Node10.15.0 + Chromium71 + Pandoc2.5  
+Alpine3.9 + Node10.15.3 + Chromium72 + Pandoc2.7.1  
 This image was created to "print" PDF using [puppeteer](https://github.com/GoogleChrome/puppeteer) from HTML generated with Pandoc.
 
 ```js
@@ -32,9 +32,9 @@ mkdirp("dist")
 ```
 
 ```sh
-npm init -y && npm i puppeteer-core
-chmod u+x index.js
-docker run -it --rm -u `id -u`:`id -g` -v `pwd`:/root -w /root --cap-add=SYS_ADMIN ahuglajbclajep/alpine-node-chromium-pandoc /root/index.js
+$ npm init -y && npm i puppeteer-core
+$ chmod u+x index.js
+$ docker run -it --rm -u `id -u`:`id -g` -v `pwd`:/root -w /root --init --cap-add=SYS_ADMIN ahuglajbclajep/alpine-node-chromium-pandoc /root/index.js
 ```
 
 ## Reference
